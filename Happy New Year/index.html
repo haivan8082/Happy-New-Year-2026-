@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Happy New Year 2026</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= TOP TITLE ================= -->
+<div class="top-title">
+    Nhìn lại năm cũ – Bước sang năm mới
+</div>
+
+<!-- ================= TET BANNERS ================= -->
+<div class="banner left">
+    <span>Chúc Mừng Năm Mới</span>
+    <div class="tassel"></div>
+</div>
+
+<div class="banner right">
+    <span>Tân Xuân Bính Ngọ</span>
+    <div class="tassel"></div>
+</div>
+
+<!-- ================= INPUT SCREEN ================= -->
+<div class="box" id="screen1">
+    <h1>🎆 Happy New Year 2026 🎆</h1>
+    <p>Năm Bính Ngọ – Khởi đầu mới</p>
+
+    <input id="name" placeholder="Nhập tên của bạn">
+    <input id="age" type="number" placeholder="Nhập tuổi">
+
+    <button onclick="next()">Bắt đầu</button>
+    <div class="error" id="err"></div>
+
+    <div class="horse">🐎</div>
+</div>
+
+<!-- ================= MUSIC TOGGLE ================= -->
+<button id="musicToggle" style="
+    position:fixed;
+    bottom:20px;
+    left:20px;
+    z-index:20;
+    padding:10px 16px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(90deg,#ffd700,#ff9f00);
+    color:#7a0000;
+    font-weight:bold;
+    cursor:pointer;
+">🔊 Nhạc</button>
+
+<audio id="bgMusic" loop>
+    <source src="Happy New Year (Remix).mp3" type="audio/mpeg">
+</audio>
+
+<!-- ⭐ CHÌA KHÓA Ở ĐÂY -->
+<script src="script.js" defer></script>
+
+</body>
+</html>

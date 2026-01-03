@@ -1,0 +1,368 @@
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    height:100vh;
+    font-family:"Segoe UI",sans-serif;
+    background:
+      linear-gradient(rgba(120,0,0,.45),rgba(120,0,0,.45)),
+      url("background-tet-voi-long-den (9).jpg") center/cover no-repeat;
+    overflow:hidden;
+}
+
+/* ================= TOP TITLE ================= */
+.top-title{
+    position:fixed;
+    top:6%;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:40px;
+    font-weight:900;
+    color:#ffd700;
+    text-shadow:
+        0 0 10px #ffcc00,
+        0 0 25px rgba(255,215,0,.8),
+        0 0 40px rgba(255,100,0,.6);
+    z-index:5;
+    letter-spacing:1px;
+    text-align:center;
+    white-space:nowrap;
+}
+
+/* ================= MAIN BOX ================= */
+.box{
+    position:relative;
+    width:420px;
+    padding:32px;
+    background:rgba(0,0,0,.35);
+    backdrop-filter:blur(6px);
+    border-radius:22px;
+    border:2px solid rgba(255,215,0,.45);
+    box-shadow:0 0 40px rgba(255,215,0,.4);
+    text-align:center;
+    color:#ffd700;
+    margin:auto;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:10;
+}
+
+h1{
+    margin:0;
+    font-size:28px;
+    text-shadow:0 0 12px rgba(255,215,0,.9);
+}
+
+p{
+    margin:12px 0 18px;
+    color:#ffeb99;
+    font-size:15px;
+}
+
+/* ================= INPUT ================= */
+input{
+    width:100%;
+    padding:14px;
+    margin-top:14px;
+    border:none;
+    border-radius:10px;
+    font-size:15px;
+    outline:none;
+}
+
+input:disabled{
+    background:#eee;
+    color:#666;
+}
+
+/* ================= BUTTON ================= */
+button{
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(90deg,#ffd700,#ffae00);
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    color:#7a0000;
+}
+
+button:hover{filter:brightness(1.1)}
+button:disabled{opacity:.6;cursor:not-allowed}
+
+/* ================= ERROR ================= */
+.error{
+    margin-top:12px;
+    color:#ffd1d1;
+}
+
+/* ================= HORSE ================= */
+.horse{
+    position:absolute;
+    bottom:-35px;
+    right:-25px;
+    font-size:64px;
+    filter:drop-shadow(0 0 10px gold);
+    animation: horseMove 3s ease-in-out infinite;
+}
+
+@keyframes horseMove{
+    0%,100%{transform:translateX(0)}
+    50%{transform:translateX(-12px)}
+}
+
+/* ================= FLOWERS ================= */
+.flower{
+    position:fixed;
+    top:-30px;
+    width:18px;
+    height:18px;
+    background:radial-gradient(circle at 30% 30%,#ffd700,#ff4d4d);
+    border-radius:50%;
+    opacity:.8;
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+    0%{transform:translateY(-50px) rotate(0deg);opacity:0}
+    10%{opacity:1}
+    100%{transform:translateY(110vh) rotate(360deg);opacity:0}
+}
+
+/* ================= SPARK ================= */
+.spark{
+    position:fixed;
+    width:6px;
+    height:6px;
+    background:#ffd700;
+    border-radius:50%;
+    box-shadow:0 0 10px #ffd700;
+    animation:float 8s linear infinite;
+}
+
+@keyframes float{
+    from{transform:translateY(100vh);opacity:0}
+    10%{opacity:1}
+    to{transform:translateY(-10vh);opacity:0}
+}
+
+/* ================= TET BANNERS ================= */
+.banner{
+    position:fixed;
+    top:50%;
+    width:90px;
+    height:360px;
+    transform:translateY(-50%);
+    background:linear-gradient(180deg,#b30000,#ff0000,#b30000);
+    border-radius:12px;
+    box-shadow:0 0 25px rgba(255,215,0,.6);
+    z-index:2;
+    overflow:hidden;
+    animation:sway 5s ease-in-out infinite;
+}
+
+.banner::before{
+    content:"";
+    position:absolute;
+    inset:6px;
+    border:2px solid #ffd700;
+    border-radius:10px;
+}
+
+.banner span{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) rotate(-90deg);
+    font-size:28px;
+    font-weight:bold;
+    color:#ffd700;
+    text-shadow:0 0 12px gold;
+    white-space:nowrap;
+}
+
+.tassel{
+    position:absolute;
+    bottom:-22px;
+    left:50%;
+    transform:translateX(-50%);
+    width:14px;
+    height:22px;
+    background:#ffd700;
+    border-radius:0 0 8px 8px;
+    box-shadow:0 0 10px gold;
+}
+
+.banner.left{left:20px}
+.banner.right{right:20px}
+
+@keyframes sway{
+    0%,100%{transform:translateY(-50%) rotate(0deg)}
+    50%{transform:translateY(-50%) rotate(1.2deg)}
+}
+
+/* ================= FORM QUESTION LAYOUT ================= */
+.form-step{
+    animation:fadeIn .35s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(12px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+.form-footer{
+    display:flex;
+    justify-content:space-between;
+    gap:14px;
+    margin-top:26px;
+}
+
+.form-footer button{
+    width:50%;
+}
+
+button.back{
+    background:linear-gradient(90deg,#ddd,#f3f3f3);
+    color:#7a0000;
+    font-weight:bold;
+}
+
+/* ================= TRANSITION ================= */
+.fadeOut{
+    animation:fade 1.2s forwards;
+}
+@keyframes fade{
+    to{opacity:0;transform:translateY(-40px)}
+}
+/* ================= RADIO QUESTIONS FIX ================= */
+.form-step label{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:10px 12px;
+    margin:8px 0;
+    background:rgba(255,215,0,.08);
+    border-radius:10px;
+    cursor:pointer;
+    transition:.2s;
+    color:#ffeb99;
+    font-size:15px;
+}
+
+.form-step label:hover{
+    background:rgba(255,215,0,.18);
+}
+
+.form-step input[type="radio"]{
+    appearance:none;
+    -webkit-appearance:none;
+    width:18px;
+    height:18px;
+    border:2px solid #ffd700;
+    border-radius:50%;
+    position:relative;
+    cursor:pointer;
+    flex-shrink:0;
+}
+
+.form-step input[type="radio"]::before{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:10px;
+    height:10px;
+    background:#ffd700;
+    border-radius:50%;
+    transform:translate(-50%,-50%) scale(0);
+    transition:.2s;
+}
+
+.form-step input[type="radio"]:checked::before{
+    transform:translate(-50%,-50%) scale(1);
+}
+/* ================= PROGRESS ================= */
+.progress{
+    width:100%;
+    height:10px;
+    background:rgba(255,215,0,.2);
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:18px;
+}
+
+.progress-bar{
+    height:100%;
+    width:0%;
+    background:linear-gradient(90deg,#ffd700,#ff9f00);
+    transition:.4s;
+}
+.form-step label.selected{
+    background:rgba(255,215,0,.25);
+    box-shadow:0 0 12px rgba(255,215,0,.6);
+}
+
+.form-step.disabled{
+    opacity:.6;
+    pointer-events:none;
+}
+.step-anim{
+    animation:slide .35s ease;
+}
+
+@keyframes slide{
+    from{opacity:0;transform:translateX(30px)}
+    to{opacity:1;transform:translateX(0)}
+}
+
+.progress-text{
+    margin-top:6px;
+    font-size:13px;
+    color:#ffeb99;
+    text-align:right;
+}
+/* Responsive box */
+.box{
+    width:420px;
+    max-width:90%;
+}
+
+/* Horse animation: nhún nhảy y + trượt ngang */
+@keyframes horseMove{
+    0%,100%{transform:translate(0,0)}
+    25%{transform:translate(-12px,-6px)}
+    50%{transform:translate(0,-12px)}
+    75%{transform:translate(12px,-6px)}
+}
+
+/* Progress text hiển thị % */
+.progress-text{
+    margin-top:6px;
+    font-size:13px;
+    color:#ffeb99;
+    text-align:right;
+}
+
+/* Error highlight nếu bỏ trống câu trả lời */
+.error-active{
+    color:#ff4d4d;
+    font-weight:bold;
+}
+.terminal{
+    width: 100%;
+    max-width: 520px;          /* chặn tràn */
+    margin: 20px auto;
+    padding: 16px;
+    background: #0b0b0b;
+    border-radius: 12px;
+    color: #00ff88;
+    font-family: monospace;
+    font-size: 14px;
+
+    white-space: pre-wrap;     /* cho phép xuống dòng */
+    word-break: break-word;    /* cắt chữ dài */
+    overflow-wrap: break-word; /* KHÔNG TRÀN */
+    overflow: hidden;
+}
+
